@@ -6,19 +6,26 @@ import { IAudio, IAudioElement } from 'src/app/models/audio.models';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
-  selector: 'app-audio-table',
-  templateUrl: './audio-table.component.html',
-  styleUrls: ['./audio-table.component.scss']
+	selector: 'app-audio-table',
+	templateUrl: './audio-table.component.html',
+	styleUrls: ['./audio-table.component.scss']
 })
 export class AudioTableComponent implements OnInit {
-  private sort: MatSort;
+	private sort: MatSort;
 
   @ViewChild(MatSort) set matSort(ms: MatSort) {
-    this.sort = ms;
-    this.dataSource.sort = this.sort;
-  }
+		this.sort = ms;
+		this.dataSource.sort = this.sort;
+	}
 
-  public displayedColumns = ['id', 'play', 'favorite', 'songTitle', 'fileName', 'download'];
+  public displayedColumns = [
+  	'id',
+  	'play',
+  	'favorite',
+  	'songTitle',
+  	'fileName',
+  	'download'
+  ];
   public dataSource = new MatTableDataSource();
   public message: string;
 
@@ -31,29 +38,29 @@ export class AudioTableComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this._api.get().subscribe(
-      data => {
-        this.audios = data;
-        this.dataSource.data = this.getTalbeData(this.audios);
-        console.log(this.getTalbeData(this.audios));
-        if (this.dataSource.data?.length === 0) {
-          this.message = 'Not found';
-        }
-      });
+  	this._api.get().subscribe(
+  		data => {
+  			this.audios = data;
+  			this.dataSource.data = this.getTalbeData(this.audios);
+  			console.log(this.getTalbeData(this.audios));
+  			if (this.dataSource.data?.length === 0) {
+  				this.message = 'Not found';
+  			}
+  		});
   }
 
   private getTalbeData(audios: IAudio[]): IAudioElement[] {
-    return audios.map(
-      audio => {
-        const result: IAudioElement = {
-          id: audio.id,
-          artistImg: audio.artist.img,
-          songTitle: audio.song.title,
-          fileName: audio.song.fileName
-        }
-        return result;
-      }
-    )
+  	return audios.map(
+  		audio => {
+  			const result: IAudioElement = {
+  				id: audio.id,
+  				artistImg: audio.artist.img,
+  				songTitle: audio.song.title,
+  				fileName: audio.song.fileName
+  			}
+  			return result;
+  		}
+  	)
 
   }
 }

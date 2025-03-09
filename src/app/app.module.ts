@@ -33,7 +33,7 @@ import { AudioTableComponent } from './components/audio-table/audio-table.compon
 		InfoPageComponent,
 		FavoritesPageComponent,
 		HighlightPipe,
-  AudioTableComponent
+		AudioTableComponent
 	 ],
 	imports: [		
 		BrowserModule,
