@@ -12,4 +12,25 @@ export class PlayerWidgetComponent implements OnInit {
 	ngOnInit(): void {
 	}
 
+	public play(flag:boolean){
+	}
+
+	public pause(flag:boolean){
+	}
+
+	public stop(flag:boolean){
+	}
+
+	public rewind(flag:boolean){
+	}
+
+	public forward(flag:boolean){
+	}
+
+	public shuffle(flag:boolean){
+	}
+
+	public navigate(flag:boolean){
+	}
+
 }

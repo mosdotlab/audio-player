@@ -70,7 +70,8 @@
               "browserTarget": "audio-player:build:production"
             },
             "development": {
-              "browserTarget": "audio-player:build:development"
+              "browserTarget": "audio-player:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"
