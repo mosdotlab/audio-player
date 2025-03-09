@@ -39,6 +39,7 @@
     {
       "files": ["*.ts"],
       "rules": {
+        "@angular-eslint/no-empty-lifecycle-method": "off",
         "indent": [2, "tab"],
         "array-element-newline": ["error", "always"],
         "array-bracket-newline": ["error", { "minItems": 2 }]
