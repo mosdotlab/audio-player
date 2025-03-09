@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { PlayerWidgetComponent } from './components/player/player-widget/player-
 import { AudioListComponent } from './components/audio-list/audio-list.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { HighlightPipe } from './pipes/highlight.pipe';
+import { AudioTableComponent } from './components/audio-table/audio-table.component';
 
 @NgModule({
 	declarations: [
@@ -30,12 +32,14 @@ import { HighlightPipe } from './pipes/highlight.pipe';
 		SearchbarComponent,
 		InfoPageComponent,
 		FavoritesPageComponent,
-		HighlightPipe
+		HighlightPipe,
+  AudioTableComponent
 	 ],
-	imports: [
+	imports: [		
 		BrowserModule,
 		AppRoutingModule,
 		NoopAnimationsModule,
+		HttpClientModule,
 		...material
 	],
 	exports: [HighlightPipe],

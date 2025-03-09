@@ -5,6 +5,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 export const material = [
 	MatToolbarModule,
@@ -13,5 +15,8 @@ export const material = [
 	MatListModule,
 	MatCardModule,
 	MatInputModule,
-	MatProgressBarModule
+	MatProgressBarModule,
+	MatToolbarModule,
+	MatTableModule,
+	MatSortModule
 ];
