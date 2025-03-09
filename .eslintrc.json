@@ -35,6 +35,14 @@
       "files": ["*.html"],
       "extends": ["plugin:@angular-eslint/template/recommended"],
       "rules": {}
+    },
+    {
+      "files": ["*.ts"],
+      "rules": {
+        "indent": [2, "tab"],
+        "array-element-newline": ["error", "always"],
+        "array-bracket-newline": ["error", { "minItems": 2 }]
+      }
     }
   ]
 }
