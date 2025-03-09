@@ -12,32 +12,32 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class AudioListComponent implements OnInit {
 	private sort: MatSort;
-	
-	  @ViewChild(MatSort) set matSort(ms: MatSort) {
-			this.sort = ms;
-			this.dataSource.sort = this.sort;
-		}
-	
-	  public displayedColumns = [
+
+	@ViewChild(MatSort) set matSort(ms: MatSort) {
+		this.sort = ms;
+		this.dataSource.sort = this.sort;
+	}
+
+	public displayedColumns = [
 		'id',
 		'play',
 		'favorite',
 		'songTitle',
 		'fileName',
 		'download'
-	  ];
-	  public dataSource = new MatTableDataSource();
-	  public message: string;
-	
-	  public elements: IAudioElement[];
-	  private audios: IAudio[];
-	
-	  constructor(
+	];
+	public dataSource = new MatTableDataSource();
+	public message: string;
+
+	public elements: IAudioElement[];
+	private audios: IAudio[];
+
+	constructor(
 		public _router: Router,
 		private _api: ApiService
-	  ) { }
-	
-	  ngOnInit() {
+	) { }
+
+	ngOnInit() {
 		this._api.get().subscribe(
 			data => {
 				this.audios = data;
@@ -47,9 +47,9 @@ export class AudioListComponent implements OnInit {
 					this.message = 'Not found';
 				}
 			});
-	  }
-	
-	  private getTalbeData(audios: IAudio[]): IAudioElement[] {
+	}
+
+	private getTalbeData(audios: IAudio[]): IAudioElement[] {
 		return audios.map(
 			audio => {
 				const result: IAudioElement = {
@@ -61,7 +61,6 @@ export class AudioListComponent implements OnInit {
 				return result;
 			}
 		)
-	
-	  }
+
 	}
-	
+}
