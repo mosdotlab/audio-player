@@ -1,16 +1,27 @@
 table {
   width: 100%;
+  border-collapse: collapse;
 
   th {
     color: lightsalmon;
   }
 }
 
+.table-container {
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 1em;
+}
+
 .mat-row:hover {
   background-color: #616161;
 }
 
-.copy-icon {
+.selected {
+  border: 2px solid #c2185b;
+}
+
+.mat-icon {
   cursor: pointer;
 }
 
@@ -23,34 +34,38 @@ table {
   }
 }
 
+.play-icon {
+  margin-left: 0.5em;
+}
+
+.favorite-icon {
+}
+
+.download-icon {
+}
+
 .mat-column-play {
-  width: 10%;
-  color: darkgray;
+  width: 5%;
 }
 
 .mat-column-favorite {
-  width: 10%;
+  width: 5%;
 }
 
 .mat-column-download {
-  width: 10%;
+  width: 5%;
 }
 
 .mat-column-id {
-  width: 10%;
+  width: 5%;
 }
+
 .mat-column-songTitle {
-  width: 30%;
+  width: 40%;
   color: bisque;
 }
 
 .mat-column-fileName {
-  width: 30%;
+  width: 40%;
   color: gainsboro;
-}
-
-.mat-column-balance {
-  width: 12em;
-  min-width: 4em;
-  color: lightsalmon;
 }

@@ -1,3 +1,11 @@
 .mat-progress-bar {
   height: 15px;
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}

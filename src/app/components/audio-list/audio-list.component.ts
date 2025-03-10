@@ -14,14 +14,14 @@ export class AudioListComponent implements OnInit {
 	@Input() isFavorite: boolean = false;
 	@Output() playChange = new EventEmitter<string>();
 
-	private sort: MatSort;
+	public sort: MatSort;
 
 	@ViewChild(MatSort) set matSort(ms: MatSort) {
 		this.sort = ms;
 		this.dataSource.sort = this.sort;
 	}
 
-	public displayedColumns = [		
+	public displayedColumns = [
 		'play',
 		'favorite',
 		'id',
@@ -31,8 +31,9 @@ export class AudioListComponent implements OnInit {
 	];
 	public dataSource = new MatTableDataSource();
 	public message: string;
-
 	public elements: IAudioElement[];
+	public selectedElementId = -1;
+
 	private audios: IAudio[];
 
 	constructor(
@@ -51,8 +52,10 @@ export class AudioListComponent implements OnInit {
 			});
 	}
 
-	public play(songUrl: string) {
-		this.playChange.emit(songUrl);
+	public play(element: IAudioElement) {
+		this.selectedElementId = element.id;
+		console.log(this.selectedElementId);
+		this.playChange.emit(element.songUrl);
 	}
 
 	private getTalbeData(audios: IAudio[]): IAudioElement[] {
