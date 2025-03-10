@@ -17,6 +17,7 @@ import { PlayerWidgetComponent } from './components/player/player-widget/player-
 import { AudioListComponent } from './components/audio-list/audio-list.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { HighlightPipe } from './pipes/highlight.pipe';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @NgModule({
 	declarations: [
@@ -31,7 +32,8 @@ import { HighlightPipe } from './pipes/highlight.pipe';
 		SearchbarComponent,
 		InfoPageComponent,
 		FavoritesPageComponent,
-		HighlightPipe
+		HighlightPipe,
+  ToolbarComponent
 	 ],
 	imports: [		
 		BrowserModule,
