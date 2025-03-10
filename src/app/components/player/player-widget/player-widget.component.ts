@@ -32,7 +32,7 @@ export class PlayerWidgetComponent implements OnInit, OnChanges {
 
 				const audioCurrentTime = this.audio.currentTime;
 				if(audioCurrentTime)
-				this.currentTime = moment.utc(audioCurrentTime * 1000).format('mm:ss');
+					this.currentTime = moment.utc(audioCurrentTime * 1000).format('mm:ss');
 
 				this.progress = Math.floor(audioCurrentTime) / Math.floor(audioDuration) * 100;
 			};

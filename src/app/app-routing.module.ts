@@ -4,23 +4,25 @@ import { PlayerPageComponent } from './components/page/player-page/player-page.c
 import { InfoPageComponent } from './components/page/info-page/info-page.component';
 import { FavoritesPageComponent } from './components/page/favorites-page/favorites-page.component';
 
-const routes: Routes = [{
-	path: '',
-	redirectTo: 'player',
-	pathMatch: 'full'
-},
-{
-	path: 'player',
-	component: PlayerPageComponent
-},
-{
-	path: 'info',
-	component: InfoPageComponent
-},
-{
-	path: 'favorites',
-	component: FavoritesPageComponent
-}];
+const routes: Routes = [
+	{
+		path: '',
+		redirectTo: 'player',
+		pathMatch: 'full'
+	},
+	{
+		path: 'player',
+		component: PlayerPageComponent
+	},
+	{
+		path: 'info',
+		component: InfoPageComponent
+	},
+	{
+		path: 'favorites',
+		component: FavoritesPageComponent
+	}
+];
 
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],
