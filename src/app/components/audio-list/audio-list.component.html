@@ -12,7 +12,9 @@
   <ng-container matColumnDef="play">
     <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cells *matCellDef="let element">
-      <mat-icon class="play-icon" aria-label="play">play</mat-icon>
+      <mat-icon class="play-icon" aria-label="play" (click)="play(element.songUrl)"
+        >play_arrow</mat-icon
+      >
     </td>
   </ng-container>
 

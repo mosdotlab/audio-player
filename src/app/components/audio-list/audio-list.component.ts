@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
@@ -11,6 +11,9 @@ import { ApiService } from 'src/app/services/api.service';
 	styleUrls: ['./audio-list.component.scss']
 })
 export class AudioListComponent implements OnInit {
+	@Input() isFavorite: boolean = false;
+	@Output() playChange = new EventEmitter<string>();
+
 	private sort: MatSort;
 
 	@ViewChild(MatSort) set matSort(ms: MatSort) {
@@ -42,11 +45,14 @@ export class AudioListComponent implements OnInit {
 			data => {
 				this.audios = data;
 				this.dataSource.data = this.getTalbeData(this.audios);
-				console.log(this.getTalbeData(this.audios));
 				if (this.dataSource.data?.length === 0) {
 					this.message = 'Not found';
 				}
 			});
+	}
+
+	public play(songUrl: string) {
+		this.playChange.emit(songUrl);
 	}
 
 	private getTalbeData(audios: IAudio[]): IAudioElement[] {
@@ -55,12 +61,13 @@ export class AudioListComponent implements OnInit {
 				const result: IAudioElement = {
 					id: audio.id,
 					artistImg: audio.artist.img,
+					songUrl: audio.song.url,
 					songTitle: audio.song.title,
-					fileName: audio.song.fileName
+					fileName: audio.song.fileName,
+
 				}
 				return result;
 			}
 		)
-
 	}
 }

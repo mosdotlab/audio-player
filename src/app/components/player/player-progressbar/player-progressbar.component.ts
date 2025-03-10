@@ -1,15 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 
 @Component({
 	selector: 'app-player-progressbar',
 	templateUrl: './player-progressbar.component.html',
 	styleUrls: ['./player-progressbar.component.scss']
 })
-export class PlayerProgressbarComponent implements OnInit {
-
+export class PlayerProgressbarComponent implements OnInit, OnChanges {
+@Input() progress: number;
+@Input() duration: string;
+@Output() progressChange = new EventEmitter<number>();
 	constructor() { }
 
-	ngOnInit(): void {
+	ngOnChanges(changes: SimpleChanges) {
+		const val = changes?.['progress']?.currentValue;
 	}
+	ngOnInit() {
+	}
+
+	onClick(event:MouseEvent){
+		const val=event.x/document.body.clientWidth*100;
+		this.progressChange.emit(val);
+	}
+
+
+
+
 
 }

@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./player-page.component.scss']
 })
 export class PlayerPageComponent implements OnInit {
+	public songUrl: string;
 
 	constructor() { }
 
 	ngOnInit(): void {
+	}
+
+	public play(songUrl: string) {
+		this.songUrl = songUrl;
 	}
 
 }

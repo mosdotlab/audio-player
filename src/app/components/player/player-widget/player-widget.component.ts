@@ -1,36 +1,68 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
 	selector: 'app-player-widget',
 	templateUrl: './player-widget.component.html',
 	styleUrls: ['./player-widget.component.scss']
 })
-export class PlayerWidgetComponent implements OnInit {
+export class PlayerWidgetComponent implements OnInit, OnChanges {
+	@Input() songUrl: string;
 
-	constructor() { }
+	public progress: number;
+	public duration: string;
+	private audio: HTMLAudioElement;
 
-	ngOnInit(): void {
+	constructor() {
+		this.audio = new Audio();
 	}
 
-	public play(flag:boolean){
+	ngOnChanges(changes: SimpleChanges) {
+		const val = changes?.['songUrl']?.currentValue;
+		if (val) {
+			this.audio.src = this.songUrl;
+			this.audio.load();
+			this.audio.play();
+
+			this.audio.ontimeupdate = () => {
+				this.duration = this.audio.duration.toString();
+				this.progress = Math.floor(this.audio.currentTime) / Math.floor(this.audio.duration) * 100;
+			};
+		}
 	}
 
-	public pause(flag:boolean){
+	ngOnInit() {
 	}
 
-	public stop(flag:boolean){
+	public updateProgress(event: number) {
+		this.audio.currentTime = event * this.audio.duration / 100;
 	}
 
-	public rewind(flag:boolean){
+	public play(flag: boolean) {
+		this.audio.play();
 	}
 
-	public forward(flag:boolean){
+	public pause(flag: boolean) {
+		this.audio.pause();
+
 	}
 
-	public shuffle(flag:boolean){
+	public stop(flag: boolean) {
+
 	}
 
-	public navigate(flag:boolean){
+	public rewind(flag: boolean) {
+
+	}
+
+	public forward(flag: boolean) {
+	}
+
+	public shuffle(flag: boolean) {
+	}
+
+	public navigate(flag: boolean) {
+
+
 	}
 
 }

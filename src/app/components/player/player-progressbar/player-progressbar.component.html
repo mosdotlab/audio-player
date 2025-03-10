@@ -1,1 +1,6 @@
-<mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+{{ progress }} {{ duration }}
+<mat-progress-bar
+  mode="determinate"
+  [value]="progress"
+  (click)="onClick($event)"
+></mat-progress-bar>

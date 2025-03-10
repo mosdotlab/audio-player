@@ -1,11 +1,15 @@
+<app-player-progressbar
+  [progress]="progress"
+  [duration]="duration"
+  (progressChange)="updateProgress($event)"
+></app-player-progressbar>
+
 <app-player-actions
   (playChange)="play($event)"
-  (pauseChange)="play($event)"
-  (stopChange)="pause($event)"
-  (rewindChange)="stop($event)"
+  (pauseChange)="pause($event)"
+  (stopChange)="stop($event)"
+  (rewindChange)="rewind($event)"
   (forwardChange)="rewind($event)"
   (shuffleChange)="shuffle($event)"
   (navigateChange)="navigate($event)"
 ></app-player-actions>
-
-<app-player-progressbar></app-player-progressbar>

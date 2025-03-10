@@ -21,6 +21,7 @@ export interface IAudioElement {
 	favoriteIcon?: string,
 	downloadIcon?: string,
 	artistImg?: string,
+	songUrl: string;
 	songTitle: string,
 	fileName: string
 }
