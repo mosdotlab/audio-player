@@ -1,0 +1,62 @@
+[
+	{
+		"id": 21,
+		"artist": {
+			"name": "Blondie",
+			"img": "api/img/Blondie.webp"
+		},
+		"song": {
+			"url": "api/data/Blondie - Maria.mp3",
+			"title": "Blondie - Maria",
+			"fileName": "Blondie Maria file"
+		}
+	},
+	{
+		"id": 34,
+		"artist": {
+			"name": "Chris Rea",
+			"img": "api/img/Chris Rea.webp"
+		},
+		"song": {
+			"url": "api/data/Chris Rea - Auberge.mp3",
+			"title": "Chris Rea - Auberge",
+			"fileName": "Chris Rea Auberge file"
+		}
+	},
+	{
+		"id": 45,
+		"artist": {
+			"name": "Eagles",
+			"img": "api/img/Eagles.webp"
+		},
+		"song": {
+			"url": "api/data/Eagles - Hotel Calofornia.mp3",
+			"title": "Eagles - Hotel Calofornia",
+			"fileName": "Eagles Hotel Calofornia file"
+		}
+	},
+	{
+		"id": 67,
+		"artist": {
+			"name": "DefLeppard",
+			"img": "api/img/DefLeppard.webp"
+		},
+		"song": {
+			"url": "api/data/DefLeppard - Hysteria.mp3",
+			"title": "DefLeppard - Hysteria",
+			"fileName": "DefLeppard Hysteria file"
+		}
+	},
+	{
+		"id": 90,
+		"artist": {
+			"name": "Gary Moore",
+			"img": "api/img/Gary Moore.webp"
+		},
+		"song": {
+			"url": "api/data/Gary Moore - Spanish Gguitar.mp3",
+			"title": "Gary Moore - Spanish Gguitar",
+			"fileName": "Gary Moore Spanish Gguitar file"
+		}
+	}
+]
