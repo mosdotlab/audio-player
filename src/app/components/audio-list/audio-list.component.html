@@ -12,17 +12,15 @@
   >
     <ng-container matColumnDef="play">
       <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cells *matCellDef="let element">
-        <mat-icon class="play-icon" color="primary" aria-label="play" (click)="play(element)">
-          play_arrow
-        </mat-icon>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon color="primary" aria-label="play" (click)="play(element)">play_arrow</mat-icon>
       </td>
     </ng-container>
 
     <ng-container matColumnDef="favorite">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let element">
-        <mat-icon class="favorite-icon" color="accent" aria-label="favorite">favorite</mat-icon>
+        <mat-icon color="accent" aria-label="favorite">favorite</mat-icon>
       </td>
     </ng-container>
 
@@ -44,7 +42,7 @@
     <ng-container matColumnDef="download">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let element">
-        <mat-icon class="download-icon" color="accent" aria-label="download">download</mat-icon>
+        <mat-icon color="accent" aria-label="download">download</mat-icon>
       </td>
     </ng-container>
 
