@@ -16,8 +16,7 @@ export class PlayerActionsComponent implements OnInit {
 
 	constructor() { }
 
-	ngOnInit(): void {
-	}
+	ngOnInit() { }
 
 	public play() {
 		this.playChange.emit(true);
