@@ -1,4 +1,4 @@
-import {  Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import * as moment from 'moment';
 
 @Component({
@@ -6,7 +6,7 @@ import * as moment from 'moment';
 	templateUrl: './player-widget.component.html',
 	styleUrls: ['./player-widget.component.scss']
 })
-export class PlayerWidgetComponent implements OnInit, OnChanges {
+export class PlayerWidgetComponent implements OnInit, OnChanges, OnDestroy {
 	@Input() songUrl: string;
 
 	public progress: number;
@@ -43,27 +43,31 @@ export class PlayerWidgetComponent implements OnInit, OnChanges {
 	ngOnInit() {
 	}
 
+	ngOnDestroy() {
+		this.audio.srcObject = null;
+	}
+
 	public updateProgress(event: number) {
 		this.audio.currentTime = event * this.audio.duration / 100;
 	}
 
 	public play(flag: boolean) {
-		if(this.audio?.src)
+		if (this.audio?.src)
 			this.audio.play();
 	}
 
 	public pause(flag: boolean) {
-		if(this.audio?.src)		
+		if (this.audio?.src)
 			this.audio.pause();
 	}
 
-	public stop(flag: boolean) {}
+	public stop(flag: boolean) { }
 
-	public rewind(flag: boolean) {}
+	public rewind(flag: boolean) { }
 
-	public forward(flag: boolean) {	}
+	public forward(flag: boolean) { }
 
-	public shuffle(flag: boolean) {	}
+	public shuffle(flag: boolean) { }
 
 	public navigate(flag: boolean) { }
 
