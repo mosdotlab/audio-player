@@ -7,7 +7,6 @@ import { IAudio } from '../models/audio.models';
 	providedIn: 'root'
 })
 export class ApiService {
-	private API_PATH = '';
   
 	constructor(private _http: HttpClient) { }
   

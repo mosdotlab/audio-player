@@ -10,8 +10,7 @@ export class PlayerPageComponent implements OnInit {
 
 	constructor() { }
 
-	ngOnInit(): void {
-	}
+	ngOnInit() { }
 
 	public play(songUrl: string) {
 		this.songUrl = songUrl;

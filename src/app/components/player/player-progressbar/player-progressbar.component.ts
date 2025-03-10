@@ -1,9 +1,10 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 
 @Component({
 	selector: 'app-player-progressbar',
 	templateUrl: './player-progressbar.component.html',
-	styleUrls: ['./player-progressbar.component.scss']
+	styleUrls: ['./player-progressbar.component.scss'],
+	changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class PlayerProgressbarComponent implements OnInit, OnChanges {
 	@Input() progress: number;

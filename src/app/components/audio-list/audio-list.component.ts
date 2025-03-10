@@ -11,7 +11,7 @@ import { ApiService } from 'src/app/services/api.service';
 	styleUrls: ['./audio-list.component.scss']
 })
 export class AudioListComponent implements OnInit {
-	@Input() isFavorite: boolean = false;
+	@Input() isFavorite = false;
 	@Output() playChange = new EventEmitter<string>();
 
 	public sort: MatSort;
@@ -54,7 +54,6 @@ export class AudioListComponent implements OnInit {
 
 	public play(element: IAudioElement) {
 		this.selectedElementId = element.id;
-		console.log(this.selectedElementId);
 		this.playChange.emit(element.songUrl);
 	}
 

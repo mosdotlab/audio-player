@@ -7,11 +7,6 @@ import { FavoritesPageComponent } from './components/page/favorites-page/favorit
 const routes: Routes = [
 	{
 		path: '',
-		redirectTo: 'player',
-		pathMatch: 'full'
-	},
-	{
-		path: 'player',
 		component: PlayerPageComponent
 	},
 	{

@@ -33,7 +33,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 		InfoPageComponent,
 		FavoritesPageComponent,
 		HighlightPipe,
-  ToolbarComponent
+		ToolbarComponent
 	 ],
 	imports: [		
 		BrowserModule,

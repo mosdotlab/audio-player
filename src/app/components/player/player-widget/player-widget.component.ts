@@ -1,10 +1,11 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import * as moment from 'moment';
 
 @Component({
 	selector: 'app-player-widget',
 	templateUrl: './player-widget.component.html',
-	styleUrls: ['./player-widget.component.scss']
+	styleUrls: ['./player-widget.component.scss'],
+	changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class PlayerWidgetComponent implements OnInit, OnChanges {
 	@Input() songUrl: string;
@@ -20,6 +21,7 @@ export class PlayerWidgetComponent implements OnInit, OnChanges {
 
 	ngOnChanges(changes: SimpleChanges) {
 		const val = changes?.['songUrl']?.currentValue;
+		
 		if (val) {
 			this.audio.src = this.songUrl;
 			this.audio.load();
@@ -47,31 +49,23 @@ export class PlayerWidgetComponent implements OnInit, OnChanges {
 	}
 
 	public play(flag: boolean) {
+		if(this.audio?.src)
 		this.audio.play();
 	}
 
 	public pause(flag: boolean) {
+		if(this.audio?.src)		
 		this.audio.pause();
-
 	}
 
-	public stop(flag: boolean) {
+	public stop(flag: boolean) {}
 
-	}
+	public rewind(flag: boolean) {}
 
-	public rewind(flag: boolean) {
+	public forward(flag: boolean) {	}
 
-	}
+	public shuffle(flag: boolean) {	}
 
-	public forward(flag: boolean) {
-	}
-
-	public shuffle(flag: boolean) {
-	}
-
-	public navigate(flag: boolean) {
-
-
-	}
+	public navigate(flag: boolean) { }
 
 }
