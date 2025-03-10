@@ -45,7 +45,7 @@ export class AudioListComponent implements OnInit {
 		this._api.get().subscribe(
 			data => {
 				this.audios = data;
-				this.dataSource.data = this.getTalbeData(this.audios);
+				this.dataSource.data = this.getTableData(this.audios);
 				if (this.dataSource.data?.length === 0) {
 					this.message = 'Not found';
 				}
@@ -57,19 +57,18 @@ export class AudioListComponent implements OnInit {
 		this.playChange.emit(element.songUrl);
 	}
 
-	private getTalbeData(audios: IAudio[]): IAudioElement[] {
+	private getTableData(audios: IAudio[]): IAudioElement[] {
 		return audios.map(
 			audio => {
-				const result: IAudioElement = {
+				const element: IAudioElement = {
 					id: audio.id,
 					artistImg: audio.artist.img,
 					songUrl: audio.song.url,
 					songTitle: audio.song.title,
-					fileName: audio.song.fileName,
-
+					fileName: audio.song.fileName
 				}
-				return result;
-			}
-		)
+				return element;
+			})
 	}
+
 }

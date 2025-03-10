@@ -15,11 +15,10 @@ export class PlayerProgressbarComponent implements OnInit, OnChanges {
 
 	ngOnChanges(changes: SimpleChanges) {
 		const val = changes?.['duration']?.currentValue;
-		if (val) {
-		}
+		if (val) {}
 	}
-	ngOnInit() {
-	}
+
+	ngOnInit() {}
 
 	onClick(event: MouseEvent) {
 		const val = event.x / document.body.clientWidth * 100;
