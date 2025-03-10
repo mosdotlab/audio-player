@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import {  Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import * as moment from 'moment';
 
 @Component({
 	selector: 'app-player-widget',
 	templateUrl: './player-widget.component.html',
-	styleUrls: ['./player-widget.component.scss'],
-	changeDetection:ChangeDetectionStrategy.OnPush
+	styleUrls: ['./player-widget.component.scss']
 })
 export class PlayerWidgetComponent implements OnInit, OnChanges {
 	@Input() songUrl: string;
@@ -21,7 +20,7 @@ export class PlayerWidgetComponent implements OnInit, OnChanges {
 
 	ngOnChanges(changes: SimpleChanges) {
 		const val = changes?.['songUrl']?.currentValue;
-		
+
 		if (val) {
 			this.audio.src = this.songUrl;
 			this.audio.load();
