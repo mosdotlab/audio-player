@@ -1,0 +1,56 @@
+table {
+  width: 100%;
+
+  th {
+    color: lightsalmon;
+  }
+}
+
+.mat-row:hover {
+  background-color: #616161;
+}
+
+.copy-icon {
+  cursor: pointer;
+}
+
+.message {
+  display: table;
+  margin: 10em auto;
+
+  p {
+    font-size: 4em;
+  }
+}
+
+.mat-column-play {
+  width: 10%;
+  color: darkgray;
+}
+
+.mat-column-favorite {
+  width: 10%;
+}
+
+.mat-column-download {
+  width: 10%;
+}
+
+.mat-column-id {
+  width: 10%;
+}
+.mat-column-songTitle {
+  width: 30%;
+  color: bisque;
+}
+
+.mat-column-fileName {
+  width: 30%;
+  color: gainsboro;
+}
+
+.mat-column-balance {
+  width: 12em;
+  min-width: 4em;
+  color: lightsalmon;
+}

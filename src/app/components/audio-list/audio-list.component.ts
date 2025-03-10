@@ -21,10 +21,10 @@ export class AudioListComponent implements OnInit {
 		this.dataSource.sort = this.sort;
 	}
 
-	public displayedColumns = [
-		'id',
+	public displayedColumns = [		
 		'play',
 		'favorite',
+		'id',
 		'songTitle',
 		'fileName',
 		'download'

@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 export class PlayerProgressbarComponent implements OnInit, OnChanges {
 	@Input() progress: number;
 	@Input() duration: string;
-	@Input() currentTime = "00:00";
+	@Input() currentTime: string;
 	@Output() progressChange = new EventEmitter<number>();
 
 	constructor() { }
