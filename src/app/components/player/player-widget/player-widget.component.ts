@@ -50,12 +50,12 @@ export class PlayerWidgetComponent implements OnInit, OnChanges {
 
 	public play(flag: boolean) {
 		if(this.audio?.src)
-		this.audio.play();
+			this.audio.play();
 	}
 
 	public pause(flag: boolean) {
 		if(this.audio?.src)		
-		this.audio.pause();
+			this.audio.pause();
 	}
 
 	public stop(flag: boolean) {}
