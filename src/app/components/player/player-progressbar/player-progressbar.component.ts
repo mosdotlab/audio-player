@@ -6,19 +6,23 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 	styleUrls: ['./player-progressbar.component.scss']
 })
 export class PlayerProgressbarComponent implements OnInit, OnChanges {
-@Input() progress: number;
-@Input() duration: string;
-@Output() progressChange = new EventEmitter<number>();
+	@Input() progress: number;
+	@Input() duration: string;
+	@Input() currentTime = "00:00";
+	@Output() progressChange = new EventEmitter<number>();
+
 	constructor() { }
 
 	ngOnChanges(changes: SimpleChanges) {
-		const val = changes?.['progress']?.currentValue;
+		const val = changes?.['duration']?.currentValue;
+		if (val) {
+		}
 	}
 	ngOnInit() {
 	}
 
-	onClick(event:MouseEvent){
-		const val=event.x/document.body.clientWidth*100;
+	onClick(event: MouseEvent) {
+		const val = event.x / document.body.clientWidth * 100;
 		this.progressChange.emit(val);
 	}
 

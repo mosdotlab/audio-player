@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import * as moment from 'moment';
 
 @Component({
 	selector: 'app-player-widget',
@@ -10,6 +11,7 @@ export class PlayerWidgetComponent implements OnInit, OnChanges {
 
 	public progress: number;
 	public duration: string;
+	public currentTime: string;
 	private audio: HTMLAudioElement;
 
 	constructor() {
@@ -24,8 +26,15 @@ export class PlayerWidgetComponent implements OnInit, OnChanges {
 			this.audio.play();
 
 			this.audio.ontimeupdate = () => {
-				this.duration = this.audio.duration.toString();
-				this.progress = Math.floor(this.audio.currentTime) / Math.floor(this.audio.duration) * 100;
+				const audioDuration = this.audio.duration;
+				if(audioDuration)
+					this.duration = moment.utc(audioDuration * 1000).format('mm:ss');
+
+				const audioCurrentTime = this.audio.currentTime;
+				if(audioCurrentTime)
+				this.currentTime = moment.utc(audioCurrentTime * 1000).format('mm:ss');
+
+				this.progress = Math.floor(audioCurrentTime) / Math.floor(audioDuration) * 100;
 			};
 		}
 	}
